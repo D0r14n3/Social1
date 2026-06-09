@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Voitures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🚗 Gestion de Voitures</h1>
+            <p>Gérez votre flotte automobile facilement</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Form Section -->
+            <section class="form-section">
+                <h2>Ajouter une Voiture</h2>
+                <form id="carForm">
+                    <div class="form-group">
+                        <label for="marque">Marque:</label>
+                        <input type="text" id="marque" name="marque" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modele">Modèle:</label>
+                        <input type="text" id="modele" name="modele" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="annee">Année:</label>
+                        <input type="number" id="annee" name="annee" min="1900" max="2100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="couleur">Couleur:</label>
+                        <input type="text" id="couleur" name="couleur" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="immatriculation">Immatriculation:</label>
+                        <input type="text" id="immatriculation" name="immatriculation" placeholder="AB-123-CD" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kilometrage">Kilométrage:</label>
+                        <input type="number" id="kilometrage" name="kilometrage" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="etat">État:</label>
+                        <select id="etat" name="etat" required>
+                            <option value="">Sélectionner un état</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Bon">Bon</option>
+                            <option value="Moyen">Moyen</option>
+                            <option value="À réparer">À réparer</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-add">Ajouter la Voiture</button>
+                </form>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <h2>Filtrer les Voitures</h2>
+                <div class="filter-controls">
+                    <input type="text" id="filterMarque" placeholder="Filtrer par marque..." class="filter-input">
+                    <select id="filterEtat" class="filter-input">
+                        <option value="">Tous les états</option>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Bon">Bon</option>
+                        <option value="Moyen">Moyen</option>
+                        <option value="À réparer">À réparer</option>
+                    </select>
+                    <button id="btnReset" class="btn-reset">Réinitialiser</button>
+                </div>
+            </section>
+
+            <!-- Cars List Section -->
+            <section class="cars-section">
+                <h2>Liste des Voitures (<span id="carCount">0</span>)</h2>
+                <div id="carsList" class="cars-list">
+                    <!-- Cars will be displayed here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Gestion de Voitures. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
